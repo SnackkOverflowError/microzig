@@ -724,6 +724,11 @@ pub fn MicroBuild(port_select: PortSelect) type {
                     .name = "avr5",
                     .root_source_file = mb.core_dep.namedLazyPath("cpu_avr5"),
                 };
+            } else if (std.mem.eql(u8, target.cpu.model.name, "avr6")) {
+                return .{
+                    .name = "avr6",
+                    .root_source_file = mb.core_dep.namedLazyPath("cpu_avr6"),
+                };
             } else if (std.mem.eql(u8, target.cpu.model.name, "avr25")) {
                 return .{
                     .name = "avr25",
